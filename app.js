@@ -30,14 +30,14 @@ function handleSubmitBtn () {
 
     //Add the user's input to the table
     tbody.innerHTML +=
-        `<tr>
-            <td>${name}</td>
-            <td>${date}</td>
-            <td>$${amount}</td>
+        `<tr class="exp-table__expense">
+            <td class="exp-table__expense-date">${date}</td>
+            <td class="exp-table__expense-name">${name}</td>
+            <td class="exp-table__expense-amount">$${amount}</td>
         </tr>`;
 
     //Clear all the user's previous inputs from the webpage form 
-    cleargit FormInputs();
+    clearExpenseFormInputs();
 }
 
 function clearExpenseFormInputs() {
@@ -54,8 +54,8 @@ function getTodaysDate() {
     month = month.padStart(2, "0");
     day = day.padStart(2, "0");
 
-    return `${year}-${month}-${day}`;
+    return `${month}/${day}/${year}`;
 }
 
 //Run Flatpickr date picker
-flatpickr(document.getElementById("exp-input-date"), {});
+flatpickr(document.getElementById("exp-input-date"), { dateFormat: "m/d/Y" });

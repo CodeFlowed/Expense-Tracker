@@ -19,6 +19,10 @@ html {
     background-color:palegreen;
 }
 
+.exp-table__col-name {
+    text-align: left;
+}
+
 .exp-table__expense-amount {
     text-align: right;
 }
