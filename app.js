@@ -31,6 +31,9 @@ function handleSubmitBtn () {
     //Add the user's input to the table
     tbody.innerHTML +=
         `<tr class="exp-table__expense">
+            <td class="exp-table__expense-selection">
+                <input type="checkbox" class="exp-table__exp-checkbox">
+            </td>
             <td class="exp-table__expense-date">${date}</td>
             <td class="exp-table__expense-name">${name}</td>
             <td class="exp-table__expense-amount">$${amount}</td>
@@ -50,7 +53,7 @@ function clearExpenseFormInputs() {
 function getTodaysDate() {
     let [month, day, year] = new Date().toLocaleDateString("en-US").split("/"); //Create variables month, day, and year w/ destructuring assignment syntax
 
-    // Pad month and date to start w/ 0s (example: 2 -> 02)
+    // Pad month and date to start w/ 0s (example: "3" -> "03")
     month = month.padStart(2, "0");
     day = day.padStart(2, "0");
 

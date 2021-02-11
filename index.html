@@ -28,9 +28,16 @@
         </section>
 
         <section class="expense-section">
+            <div class="toolbar">
+                <button class="toolbar__delete-btn">Delete</button>
+            </div>
+            
             <table id="exp-table" class="exp-table">
                 <thead>
                     <tr>
+                        <th class="exp-table__col-name">
+                            <input type="checkbox" class="exp-table__all-exp-checkbox">
+                        </th>
                         <th class="exp-table__col-name">Date</th>
                         <th class="exp-table__col-name">Name</th>
                         <th class="exp-table__col-name">Amount</th>
@@ -38,11 +45,17 @@
                 </thead>
                 <tbody id="exp-table__tbody" class="exp-table__tbody">
                     <tr class="exp-table__expense">
+                        <td class="exp-table__expense-selection">
+                            <input type="checkbox" class="exp-table__exp-checkbox">
+                        </td>
                         <td class="exp-table__expense-date">01/02/2021</td>
                         <td class="exp-table__expense-name">I'm a transaction</td>
                         <td class="exp-table__expense-amount">$5.00</td>
                     </tr>
                     <tr class="exp-table__expense">
+                        <td class="exp-table__expense-selection">
+                            <input type="checkbox" class="exp-table__exp-checkbox">
+                        </td>
                         <td class="exp-table__expense-date">01/02/2021</td>
                         <td class="exp-table__expense-name">I'm another transaction</td>
                         <td class="exp-table__expense-amount">$200.00</td>
