@@ -1,13 +1,21 @@
+//Make IE have the forEach functionality for NodeList; so expenses can be deleted 
+if (!NodeList.prototype.forEach && Array.prototype.forEach) {
+    NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
 // Create event listeners
 document.addEventListener("click", event => {
     // if form button is clicked, handle the new expense
     if (event.target.matches(".exp-form__submit-button")) {
         event.preventDefault(); //Prevent refreshing the page (among other things)
         handleSubmitBtn();
+    } else if (event.target.matches(".toolbar__delete-btn")) {
+        event.preventDefault();
+        handleDeleteBtn();
     }
 });
 
-function handleSubmitBtn () {
+function handleSubmitBtn() {
     //Access user's input values 
     let name   = document.querySelector(".exp-input-name").value.trim(),
         date   = document.querySelector(".exp-input-date").value.trim();
@@ -41,6 +49,12 @@ function handleSubmitBtn () {
 
     //Clear all the user's previous inputs from the webpage form 
     clearExpenseFormInputs();
+}
+
+function handleDeleteBtn() {
+    //Access all expenses with the forDeletion class and delete them
+    let expensesToDelete = document.querySelectorAll(".forDeletion");
+    expensesToDelete.forEach(expense => { expense.remove(); });
 }
 
 function clearExpenseFormInputs() {
