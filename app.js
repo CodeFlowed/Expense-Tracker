@@ -26,7 +26,7 @@ function handleSubmitBtn () {
     // });
         
     //Get the table's tbody element
-    let tbody = document.querySelector(".expense-table__tbody");
+    let tbody = document.querySelector(".exp-table__tbody");
 
     //Add the user's input to the table
     tbody.innerHTML +=
@@ -37,7 +37,7 @@ function handleSubmitBtn () {
         </tr>`;
 
     //Clear all the user's previous inputs from the webpage form 
-    clearExpenseFormInputs();
+    cleargit FormInputs();
 }
 
 function clearExpenseFormInputs() {
