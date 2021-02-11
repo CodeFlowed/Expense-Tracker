@@ -18,7 +18,7 @@
                     <input id="exp-input-name" class="exp-form__input exp-input-name" type="text">
                 </div>
                 <div class="exp-form__wrapper">
-                    <input id="exp-input-date" class="exp-form__input exp-input-date" type="date">
+                    <input id="exp-input-date" class="exp-form__input exp-input-date flatpickr flatpickr-input" type="text">
                 </div>
                 <div class="exp-form__wrapper">
                     <input id="exp-input-amount" class="exp-form__input exp-input-amount" type="number" step="0.01" min="0">
@@ -45,14 +45,14 @@
                     <tr>
                         <td>I'm another transaction</td>
                         <td>2021-01-03</td>
-                        <td>$2.00</td>
+                        <td>$200.00</td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>  <!-- Date picker -->
     <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 </html>
