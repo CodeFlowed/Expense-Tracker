@@ -14,6 +14,11 @@ document.addEventListener("click", event => {
         handleDeleteBtn();
     }
 });
+// document.addEventListener("change", event => {
+//     if (event.target.checked && event.target.matches(".exp-table__exp-checkbox")) {
+//         handleCheckedExpenses(event);
+//     }
+// });
 
 function handleSubmitBtn() {
     //Access user's input values 
@@ -52,9 +57,17 @@ function handleSubmitBtn() {
 }
 
 function handleDeleteBtn() {
-    //Access all expenses with the forDeletion class and delete them
-    let expensesToDelete = document.querySelectorAll(".forDeletion");
-    expensesToDelete.forEach(expense => { expense.remove(); });
+    //Get all the checked inputs and put them in a NodeList    
+    let expensesToDelete = getCheckedInputs(); //Todo: probably want to rename this variable expensesToDelete to something else
+    confirm("Delete checked expenses?");
+    //Go up the parental chain to the expense row and delete it
+    expensesToDelete.forEach(expense => { expense.parentElement.parentElement.remove(); });
+}
+
+function getCheckedInputs() {
+    //Get all the checked inputs and put them in a NodeList
+    let checkedInputs = document.querySelectorAll('input[class="exp-table__exp-checkbox"]:checked');
+    return checkedInputs;
 }
 
 function clearExpenseFormInputs() {
